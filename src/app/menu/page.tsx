@@ -329,18 +329,28 @@ export default function MenuPage() {
   const filteredItems = menuItems.filter((item) => item.category === activeCategory);
 
   return (
-    <div className="pt-20 pb-32 md:pb-16 min-h-screen bg-[var(--color-warm-white)]">
-      {/* Header */}
-      <section className="py-12 bg-[var(--color-cream)] texture-paper">
+    <div className="pb-32 md:pb-16 min-h-screen bg-gray-50 snap-y snap-proximity">
+      {/* Hero Section */}
+      <section className="pt-48 pb-20 lg:pt-52 lg:pb-28 relative overflow-hidden min-h-[78vh] lg:min-h-[78vh] flex items-center snap-start snap-always">
+        {/* Background Image */}
+        <img
+          src="/images/menu/menu-hero-bg.png"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ objectPosition: '50% 40%' }}
+        />
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black/70" />
         <Container size="wide">
-          <div className="text-center">
-            <span className="inline-block text-[var(--color-gold)] font-semibold tracking-wider uppercase text-sm mb-4">
+          <div className="flex flex-col items-center text-center relative z-10">
+            <span className="inline-block px-6 py-3 bg-[var(--color-primary)] text-white text-sm font-bold uppercase tracking-wider rounded-full mb-8">
               Our Menu
             </span>
-            <h1 className="font-display text-[var(--text-h1)] font-bold text-[var(--color-charcoal)]">
+            <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold mb-8 tracking-tight leading-tight" style={{ color: '#FFFFFF', textShadow: '0 4px 8px #000000' }}>
               Soul Food Made With Love
             </h1>
-            <p className="text-[var(--color-charcoal-light)] mt-4 max-w-2xl mx-auto">
+            <p className="text-xl sm:text-2xl max-w-3xl leading-relaxed" style={{ color: '#FFFFFF', textShadow: '0 2px 4px #000000' }}>
               Every dish is prepared fresh using family recipes passed down through generations.
             </p>
           </div>
@@ -348,18 +358,18 @@ export default function MenuPage() {
       </section>
 
       {/* Category Tabs */}
-      <section className="sticky top-20 z-30 bg-[var(--color-warm-white)] border-b border-[var(--color-cream)] py-4">
+      <section className="sticky top-[112px] z-30 bg-white shadow-sm border-b border-gray-100">
         <Container size="wide">
-          <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
+          <div className="flex gap-3 overflow-visible py-5 justify-center">
             {categories.map((category) => (
               <button
                 key={category.id}
                 onClick={() => setActiveCategory(category.id)}
                 className={cn(
-                  'px-6 py-2 rounded-full font-medium whitespace-nowrap transition-all',
+                  'px-6 py-3 rounded-full font-medium whitespace-nowrap transition-all duration-300 text-sm relative overflow-hidden',
                   activeCategory === category.id
-                    ? 'bg-[var(--color-primary)] text-white'
-                    : 'bg-[var(--color-cream)] text-[var(--color-charcoal)] hover:bg-[var(--color-parchment)]'
+                    ? 'bg-[var(--color-primary)] text-white shadow-lg scale-105'
+                    : 'bg-gray-100 text-gray-700 hover:bg-[var(--color-primary)]/10 hover:text-[var(--color-primary)] hover:scale-105 hover:shadow-md'
                 )}
               >
                 {category.label}
@@ -370,9 +380,9 @@ export default function MenuPage() {
       </section>
 
       {/* Menu Items */}
-      <section className="py-12">
+      <section className="py-16 lg:py-20 bg-gray-50 snap-start">
         <Container size="wide">
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-8">
             {filteredItems.map((item) => (
               <div
                 key={item.id}

@@ -32,7 +32,14 @@ export function DeliveryZones() {
     <section className="py-16 lg:py-20 bg-gradient-to-b from-white to-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex flex-col items-center text-center mb-16">
+        <div className="relative flex flex-col items-center text-center mb-16">
+          {/* Toledo Silhouette - Right */}
+          <img
+            src="/images/branding/toledo-silhouette.png"
+            alt="Toledo Ohio Skyline"
+            className="hidden lg:block absolute right-0 -top-72 w-96 h-auto opacity-60"
+          />
+
           <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-green-100 text-green-700 rounded-full mb-6">
             <span className="text-sm font-bold uppercase tracking-wide">
               Free Delivery on Orders $30+
@@ -51,9 +58,10 @@ export function DeliveryZones() {
         {/* Delivery Zones Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {deliveryZones.map((zone, index) => (
-            <div
+            <a
               key={index}
-              className="group bg-white rounded-xl border-2 border-gray-200 hover:border-[var(--color-primary)] overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1 text-center"
+              href="/menu"
+              className="group bg-white rounded-xl border-2 border-gray-200 hover:border-[var(--color-primary)] overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1 text-center block cursor-pointer"
             >
               {/* Zone Image */}
               <div className="relative h-40 overflow-hidden">
@@ -85,7 +93,7 @@ export function DeliveryZones() {
                   ))}
                 </ul>
               </div>
-            </div>
+            </a>
           ))}
         </div>
 

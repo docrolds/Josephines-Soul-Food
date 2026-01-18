@@ -83,7 +83,14 @@ export function FeaturedMenu() {
     <section id="featured-menu" className="py-16 lg:py-20 bg-white scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex flex-col items-center text-center mb-16">
+        <div className="relative flex flex-col items-center text-center mb-16">
+          {/* Toledo Stamp - Left */}
+          <img
+            src="/images/branding/toledo-stamp.png"
+            alt="Toledo Ohio"
+            className="hidden lg:block absolute left-0 top-0 w-56 h-auto opacity-80"
+          />
+
           <span className="inline-block px-5 py-2.5 bg-[var(--color-primary)]/10 text-[var(--color-primary)] text-sm font-bold uppercase tracking-wider rounded-full mb-6">
             Toledo's Most Beloved
           </span>
@@ -169,7 +176,15 @@ export function FeaturedMenu() {
         </div>
 
         {/* View Full Menu CTA */}
-        <div className="text-center">
+        <div className="relative text-center">
+          {/* Decorative Image - Left */}
+          <img
+            src="/images/branding/decorative-image.png"
+            alt=""
+            aria-hidden="true"
+            className="hidden lg:block absolute left-0 -top-4 w-96 h-auto opacity-90"
+          />
+
           <Button
             variant="outline"
             size="lg"

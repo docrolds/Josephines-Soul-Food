@@ -52,13 +52,10 @@ export function VideoHero() {
             <Button
               variant="secondary"
               size="xl"
-              onClick={() => {
-                const menuSection = document.querySelector('#featured-menu');
-                menuSection?.scrollIntoView({ behavior: 'smooth' });
-              }}
+              onClick={() => (window.location.href = '/menu')}
               className="text-lg font-bold px-10 py-6 bg-white/95 hover:bg-white text-neutral-900 shadow-xl backdrop-blur-md transition-all hover:scale-105"
             >
-              View Menu
+              Full Menu
             </Button>
           </div>
 
